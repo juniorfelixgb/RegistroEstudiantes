@@ -1,0 +1,33 @@
+﻿@model List<RegistroEstudiantes.Models.Entities.Estudiante>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table-dark">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Estatus</td>
+                <td>Carrera</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var colletion in Model)
+                {
+                    <td>@colletion.EstudianteId</td>
+                    <td>@colletion.Nombre</td>
+                    <td>@colletion.Apellido</td>
+                    <td>
+                        <input type="checkbox" value="1"/> Activo
+                        <input type="checkbox" value="0"/> Inactivo
+                    </td>
+                    <td>@colletion.Carrera.Descripcion</td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
